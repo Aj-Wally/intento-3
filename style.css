@@ -1,0 +1,238 @@
+body{
+    font-family: Arial;/*Tipo de fuente que se usará en la página web*/
+    background: linear-gradient(to right, #9a1d86, #1595be);/*degradado para el fondo de la página*/
+    font-weight: bold;/*colocará negrilla a las letras*/
+}
+
+.player{
+    height: 95vh;/*aumenta la altura del contenedor player en un 95% dependiendo del tamaño del body*/
+    display: flex;/*determina la disposición del contenedor*/
+    align-items: center;/*centra todos los objetos dentro del contenedor horizontal*/
+    flex-direction: column;/*dispone que todos los elementos se muestren en columnas*/
+    justify-content: center;/*centra los objetos de manera vertical*/
+}
+
+.wrapper{
+    border: 1px solid transparent;/*crea un borde transparente al reproductor*/
+    padding: 30px;/*creará una distancia conotros objetos a 30pixeles*/
+    border-radius: 20px;/*hace que los bordes se vuelvan redondos*/
+    background-color: #ddd;/*color del reproductor*/
+    box-shadow: rgb(0, 0, 0, 0.3) 0px 19px 38px, rgb(0, 0, 0, 0.22) 0px 15px 12px;/*crea una sombra alrededor del reproductor*/
+}
+
+.detalle{
+    display: flex;/*determina la disposición de los elementos dentro del contenedor*/
+    align-items: center;/*centra los elementos de manera horizontal*/
+    flex-direction: column;/*coloca los elementos en columnas*/
+    justify-content: center;/*centra los elementos de manera vertical*/
+}
+
+.track-art{
+    margin: 25px;/*crea un margen de 25pixeles*/
+    height: 250px;/*determina el alto de la imagen*/
+    width: 250px;/*determina el ancho de la imagen*/
+    border: 2px solid #fffafa;/*crea un borde de color blanco alrededor de la imagen*/
+    background-size: cover;/*hace que la imagen sea estática y cubre todo el fondo*/
+    background-position: center;/*centra la imagen*/
+    border-radius: 50%;/*hace que la imagen sea redonda en un 50%*/
+    -moz-box-shadow: 0px 6px 5px black;/*crea una sombra al rededor de la imagen para navegadores como firefox*/
+    -webkit-box-shadow: 0px 6px 5px black;/*sombra para compatibilidad con google chrome, brave o safari*/
+    box-shadow: 0px 6px 5px black;/*crea una sombra alrededor de la imagen*/
+    -moz-border-radius: 190px;/*compatibilidad con firefox para redondeo de la sombra de la imagen*/
+    -webkit-border-radius: 190px;/*compatibilidad con google Chrome, brave o safari para el redondeo de la sombra de la imagen*/
+    border-radius: 190px;/*redondea la sombra de la imagen*/
+}
+
+.now-playing{
+    font-size: 1rem;/*aumenta el tamaño de la fuente a 1rem (16 pixeles) */
+}
+
+.track-name{
+    font-size: 2.5rem;/*aumenta el tamaño de fuente a 40 pixeles*/
+}
+
+.track-artist{
+    margin-top: 5px;/*genera un margen en la parte superior del contenedor track-art*/
+    font-size:  1.5rem;/*aumenta tamaño de la fuente a 24pixeles*/
+}
+
+.buttons{
+    display: flex;/*determina la posición de los objetos en el contenedor*/
+    flex-direction: row;/*dispone que todos los elementos se coloquen en línea*/
+    align-items: center;/*centra los elementos de manera horizontal*/
+    margin-bottom: 30px;/*genera un margen de 30 pixeles*/
+}
+
+/*línea de codigo sin algún tipo de uso por el momento*/
+/*
+.activate{
+    color:black;
+}*/
+
+/*estilos para los botones random, siguiente, play/pausa y anterior*/
+.repeat-track,
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track{
+    padding: 25px;/*dará una distancia entre botones de 25 pixeles*/
+    opacity: 0.8;/*hará que la opacidad de los botones cambie a 80%*/
+    transition: opacity 0.2s;/*hará una transición de 0.2 segundos para cambiar la opacidad delos botones*/
+}
+
+/*estilos cuando se coloca el mouse encima del botón*/
+.repeat-track:hover,
+.random-track:hover,
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover{
+    opacity: 1.0;/*restaura la opacidad al 100% cuando se coloca el mouse encima*/
+}
+
+/*estilos para los controles de reproducción*/
+.slider_container{
+    display: flex;/*posiciona los elementos*/
+    justify-content: center;/*alinea los elementos de manera horizontal*/
+    align-items: center;/*alinea los elementos de manera vertical*/
+}
+
+/*estilos de la barra de volumen*/
+.seek_slider, .volume_slider{
+    -webkit-appearance: none;/*quita el estilo de la barra de volumen en navegadores como google chrome*/
+    -moz-appearance: none;/*quita el estilo de la barra de volumen en navegadores como firefox*/
+    appearance: none;/*quita el estilo de la barra de volumen*/
+    height: 5px;/*le da una altura de 5 pixeles*/
+    background: #83a9ff;/*le otorga un color a la barra de volumen*/
+    -webkit-transition: 0.2s;/*compatibilidad de transición en navegadores como google chrome*/
+    transition: opacity 0.2s;/*hace una transicion para cambiar la opacidad en 0.2 segundos*/
+}
+
+/*estilos para la rueda en la barra de reproducción y de control de volumen*/
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb{
+    -webkit-appearance: none;/*quita el estilo a la rueda dentro de navegadores como google chrome*/
+    -moz-appearance: none;/*quita el estilo a la rueda dentro de navegadores como firefox*/
+    appearance: none;/*quita el estilo a la rueda*/
+    width: 15px;/*le da un ancho de 15pixeles*/
+    height: 15px;/*le da un alto de 15 pixeles*/
+    background: white;/*le otorga un color a la rueda*/
+    border: 3px solid #3774ff;/*le otorga un color distinto al borde de la rueda*/
+    cursor: grab;/*hace que cambia la forma del mouse al pasar sobre él*/
+    border-radius: 100%;/*otorga un borde redondo del 100% a la rueda*/
+}
+
+/*estilos cuando se coloca el mouse encima de la rueda de reproducción y de volumen*/
+.seek_slider:hover,
+.volume_slider:hover{
+    opacity: 1.0;/*restaura la opacidad al 100%*/
+}
+
+/*barra de reproducción*/
+.seek_slider{
+    width: 60%;/*aumenta el ancho de la barra en un 60%*/
+}
+
+/*barra de volumen*/
+.volume_slider{
+    width: 30%;/*aumenta el ancho de la barra en un 30%*/
+}
+
+/*estilos para el tiempo transcurrido y la duración total de la canción*/
+.current-time,
+.total-duration{
+    padding: 10px;/*le da un espacio de 10pixeles entre elementos*/
+}
+
+/*estilos del icono de volumen alto y bajo*/
+i.fa-volume-down,
+i.fa-volume-up{
+    padding: 10px;/*genera un espacio de 10pixeles entre elementos*/
+}
+
+/*estilos de los iconos de play/pausa, siguiente y canción anterior */
+i,
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward,
+p{
+    cursor: pointer;/*hará que cuando */
+}
+    .randomActivate{
+        color: black;
+}
+
+/*rotación de la imagen*/
+.rotate{
+    animation: rotation 8s infinite linear;/*hará una animación para que la imagen haga una rotación completa de 
+    8segundos de manera infinira*/
+}
+
+/*animación para la rotación de la imagen*/
+@keyframes rotation {
+    from{
+        transform: rotate(0deg);/*hará que la rotación inicie en 0 grados*/
+    }
+    to {
+        transform: rotate(359deg);/*hará que la rotación termine en 359 grados*/
+    }
+}
+
+/*tamaño y posición para las lineas de las olas de reproducción cuando estas estén funcionando*/
+.loader{
+    height: 70px;/*altura de las barras de 70 pixeles*/
+    display: flex;/*posiciona las olas de reproducción*/
+    justify-content: center;/*centra las olas de reproducción de manera horizontal*/
+    align-items: center;/*centa las olas de reproducción de manera vertical*/
+}
+
+/*estilos de las lineas de las olas de reproducción*/
+.loader .stroke{
+    background: #f1f1f1;/*color para las lineas*/
+    height: 150%;/*altura de la las líneas en un 150%*/
+    width: 10px;/*anchura de 10pixeles en las líneas */
+    border-radius: 50px;/*otorga un borde redondo de 50pxa las líneas */
+    margin: 0 5px;/*otorga un margen de 5 pixeles entre cada línea*/
+    animation: animate 1.4s linear infinite;/*hace una animación de 1.4segundos de manera indefinida*/
+}
+
+/*hace que pueda ocurrir la animación de las lineas*/
+@keyframes animate{
+    50%{
+        height: 20%;/*le da una altura de 20% a la animación delas líneas*/
+        background: #4286f4;/*le otorga un color distinto cuando comienza la animación*/
+    }
+    100% {
+        background: #4286f4;/*otorga un color distinto*/
+        height: 100%;/*le da una altura de 100%*/
+    }
+}
+
+/*animación de cada una de las líneas dentro de la ola de reproducción*/
+.stroke:nth-child(1){
+    animation-delay: 0s;/*animación de 0segundos a la linea 1*/
+}
+
+.stroke:nth-child(2){
+    animation-delay: 0.3s;/*animación de 0.3segundos a la línea 2*/
+}
+
+.stroke:nth-child(3){
+    animation-delay: 0.6;/*animación de 0.6segundos a la línea 3*/
+}
+
+.stroke:nth-child(4){
+    animation-delay: 0.9s;/*animación de 0.9segundos a la línea 4*/
+}
+
+.stroke:nth-child(5){
+    animation-delay:0.6;/*animación de 0.6segundos a la línea 5*/
+}
+
+.stroke:nth-child(6){
+    animation-delay: 0.3s;/*animación de 0.3segundos a la línea 6*/
+}
+
+.stroke:nth-child(7){
+    animation-delay: 0s;/*animación de 0.3segundos a la línea 7*/
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"><!--nos permite utilizar cualquier caracter de cualquier alfabeto actual-->
+        <meta name="viewport" content="width=device-width, initial-scale=0.1"><!--por defecto el ancho del documento empiez en 1.0-->
+        <title>Spotify</title>
+        <link rel="stylesheet" href="style.css"><!--estilos en archivo css-->
+        <script src="script.js" defer></script><!--archivo javaScript-->
+        <link rel="shortcut icon" href="imagen/logo.png"><!--Iconos para la pagina web-->
+        <!--wireframe css para los botones de la página web-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><!--Librería de iconos-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Librería de iconos-->
+    </head>
+
+<body>
+
+    <div class="player"><!--div para posicionar el contenedor-->
+    <div class="wrapper"><!--contenedor para aplicar estilos al contenedor player-->
+    <div class="detalle"><!--contenedor de detalles de la canción a reproducirse-->
+        <div class="now-playing">Reproducir</div><!--número de canción que se está reproduciendo-->
+        <div class="track-art"></div><!--foto de la canción sonando-->
+        <div class="track-name">Nombre</div><!--Título de la canción-->
+        <div class="track-artist">Artista</div><!--nombre del artista de la canción sonando-->
+    </div>
+
+    <div class="slider_container"><!--control de reproducción-->
+        <div class="current-time">00:00</div><!--Contenedor para el tiempo actual de la canción-->
+        <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()"><!--barra de reproducción / va dictando los cambios para los divs adyacentes-->
+        <div class="total-duration">00:00</div><!--Contenedor para mostrar la duración total de la canción-->
+    </div>
+
+    <div class="slider_container"><!--control de volumen-->
+    <i class="fa fa-volume-down"></i><!--icono de volumen bajo-->
+    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()"><!--bara de control de volumen-->
+    <i class="fa fa-volume-up"></i><!--icono de volumen alto-->
+    </div>
+
+    <div class="buttons"><!--Contenedor de Botones de reproducción-->
+        <div class="random-track" onclick="randomTrack()"><!--al hacer click hará que la lista de reproducción sea aleatoria-->
+            <i class="fas fa-random fa-x2" title="random"></i><!--icono de reproducción aleatoria-->
+        </div>
+
+        <div class="prev-track" onclick="prevTrack()"><!--al hacer click reproducirá la canción anterior-->
+            <i class="fa fa-step-backward fa-2x"></i><!--icono de reproducir cancion anterior-->
+        </div>
+
+        <div class="playpause-track" onclick="playpauseTrack()"><!-- al hacer click pausará o reproducirá la canción-->
+            <i class="fa fa-play-circle fa-5x"></i><!--icono de play/pausa-->
+        </div>
+
+        <div class="next-track" onclick="nextTrack()"><!--al hacer click reproducirá la siguiente canción-->
+            <i class="fa fa-step-forward fa-2x"></i><!--icono de siguiente canción-->
+        </div>
+
+        <div class="repeat-track" onclick="repeatTrack()"><!--al hacer click reproducirá la canción nuevamente-->
+            <i class="fa fa-repeat fa-2x" title="repeat"></i><!--icono de repetir la canción-->
+        </div>
+    </div>
+
+<div id="wave"><!--contenedor de la ola de líneas cuando una canción se reproduce -->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+    <span class="stroke"></span><!--Línea de la ola de reproducción-->
+</div>
+    </div>
+    </div>
+</body>
+</html>
